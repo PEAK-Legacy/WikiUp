@@ -7,10 +7,10 @@ from distutils.errors import *
 class wikiup(Command):
     """Upload pages to a wiki"""
 
-    description = "upload wiki pages specified in wikipages.cfg"
+    description = "upload wiki pages specified in wikiup.cfg"
 
     user_options = [
-        ('config-file=', 'C', "file with page info (default: wikiup.cfg"),
+        ('config-file=', 'C', "file with page info (default: wikiup.cfg)"),
         ('comment=', 'c', "Revision comment to use (default: none)"),
     ]
 
