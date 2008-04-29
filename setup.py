@@ -27,7 +27,6 @@ def get_description():
 setup(
     name=PROJECT, version=VERSION, description=TAGLINE,
     url = "http://cheeseshop.python.org/pypi/" + PROJECT,
-    download_url = "http://peak.telecommunity.com/snapshots/",
     long_description = file('README.txt').read(), #get_description(),
     author="Phillip J. Eby", author_email="peak@eby-sarna.com",
     license="PSF or ZPL", test_suite = 'wikiup', py_modules=['wikiup'],
