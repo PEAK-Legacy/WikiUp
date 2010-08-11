@@ -12,10 +12,11 @@ class wikiup(Command):
     user_options = [
         ('config-file=', 'C', "file with page info (default: wikiup.cfg)"),
         ('comment=', 'c', "Revision comment to use (default: none)"),
+        ('changed-file=', 'f', "File to upload (default: all files)"),
     ]
 
     def initialize_options(self):
-        self.config_file = self.comment = None
+        self.config_file = self.comment = self.changed_file = None
         self.wikis = {}
 
     def finalize_options(self):
@@ -28,14 +29,13 @@ class wikiup(Command):
             log.warn("No wiki pages defined -- skipping upload")
         else:
             for wiki, pagename, filename in wiki_pages:
+                if self.changed_file and filename!=self.changed_file: continue
                 f = open(convert_path(filename))
                 page = f.read()
                 f.close()
                 plugin = self.get_wiki(wiki)
                 log.info("uploading %s to %s::%s", filename, wiki, pagename)
                 plugin.upload_page(pagename, page)
-
-
 
 
 

@@ -7,7 +7,7 @@ from setuptools import setup
 
 # Metadata
 PROJECT = 'WikiUp'
-VERSION = '1.0'
+VERSION = '1.1'
 TAGLINE = 'Wiki page uploading command plugin for setuptools'
 
 def get_description():

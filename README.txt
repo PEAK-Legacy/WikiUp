@@ -2,6 +2,10 @@
 Updating Project Wiki Pages from Docs using WikiUp
 ==================================================
 
+NEW in 1.1:
+    The ``--changed-file`` or ``-f`` option now lets you specify a single
+    file to upload. (See `Command-Line Usage`_ below for details.)
+
 The WikiUp project defines a setuptools extension to allow uploading Wiki
 pages from source documentation.  It's primarily intended to be useful for
 PEAK projects to update the PEAK Wiki, but other projects could make use of
@@ -46,6 +50,12 @@ The ``setup.py wikiup`` command optionally takes a ``--comment`` or ``-c``
 option to specify an update comment to apply when editing.  It can also be
 given ``--config-file`` or ``-C`` to specify an alternate config file in place
 of the local ``wikiup.cfg`` file.
+
+Also, if you have many wiki pages, you can specify just a single filename to
+update, using ``--changed-file`` or ``-f``.  The file will be uploaded to all
+the matching pages in the project's ``wikiup.cfg``.  (Note: this option is
+case-sensitive and must exactly match one or more filenames in ``wikiup.cfg``,
+or nothing will be uploaded.)
 
 
 The ``OldMoin`` Plugin
